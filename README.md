@@ -30,8 +30,8 @@ Things you may want to cover:
 | encrypted_password | string             | null: false               |
 | last_name          | string             | null: false               |
 | first_name         | string             | null: false               |
-| last_name2         | string             | null: false               |
-| first_name2        | string             | null: false               |
+| last_name_kana     | string             | null: false               |
+| first_name_kana    | string             | null: false               |
 | birthday           | date               | null: false               |
 
 ### Association
@@ -40,28 +40,27 @@ Things you may want to cover:
 
 
 # itemsテーブル
-| Column       | Type    | Options     |
-| ------------ | ------- | ----------- |
-| product_name | string  | null: false |
-| description  | text    | null: false |
-| category     | integer | null: false |
-| condition    | integer | null: false |
-| burden       | integer | null: false |
-| area         | integer | null: false |
-| days         | integer | null: false |
-| price        | integer | null: false |
+| Column        | Type    | Options     |
+| ------------- | ------- | ----------- |
+| product_name  | string  | null: false |
+| description   | text    | null: false |
+| category_id   | integer | null: false |
+| condition_id  | integer | null: false |
+| burden_id     | integer | null: false |
+| prefecture_id | integer | null: false |
+| days_id       | integer | null: false |
+| price         | integer | null: false |
 
 ### Association
 - belongs_to :user
 - has_one :purchase
 
 
-# purchase
-| Column      | Type      | Options           |
-| ----------- | --------- | ----------------- |
-| user_id     | reference | null: false       |
-| item_id     | reference | null: false       |
-| foreign_key | string    | foreign_key: true |
+# purchases テーブル
+| Column      | Type      | Options                          |
+| ----------- | --------- | -------------------------------- |
+| user        | reference | null: false , foreign_key: :true |
+| item        | reference | null: false , foreign_key: :true |
 
 ### Association
 - belongs__to :item
@@ -69,11 +68,11 @@ Things you may want to cover:
 - has_one :address
 
 
-# address テーブル
+# addresses テーブル
 | Column            | Type    | Options     |
 | ----------------- | ------- | ----------- |
 | postal_number     | string  | null: false |
-| prefectures       | integer | null: false |
+| prefectures_id    | integer | null: false |
 | municipalities    | string  | null: false |
 | address           | string  | null: false |
 | visit_name        | string  |             |
