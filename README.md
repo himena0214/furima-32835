@@ -23,18 +23,20 @@ Things you may want to cover:
 
 * ...
 # usersテーブル
-| Column   | Type               | Options                   |
-| -------- | ------------------ | ------------------------- |
-| nickname | string             | null: false,              |
-| email    | string             | null: false, unique: true |
-| password | string             | encrypted_password        |
-| name1    | string             | null: false               |
-| name2    | string             | null: false               |
-| birthday | date               | null: false               |
+| Column             | Type               | Options                   |
+| ------------------ | ------------------ | ------------------------- |
+| nickname           | string             | null: false,              |
+| email              | string             | null: false, unique: true |
+| encrypted_password | string             | null: false               |
+| last_name          | string             | null: false               |
+| first_name         | string             | null: false               |
+| last_name2         | string             | null: false               |
+| first_name2        | string             | null: false               |
+| birthday           | date               | null: false               |
 
 ### Association
 - has_many :items
-- has_many :purchase
+- has_many :purchases
 
 
 # itemsテーブル
@@ -51,16 +53,27 @@ Things you may want to cover:
 - has_one :purchase
 
 
-# purchases テーブル
+# purchase
+| Column  | Type    | Options     |
+| ------- | ------- | ----------- |
+| who     | string  | null: false |
+| what    | string  | null: false |
+
+### Association
+- has_one :item
+- belongs_to :user
+
+
+
+# address テーブル
 | Column            | Type    | Options     |
 | ----------------- | ------- | ----------- |
 | postal_number     | string  | null: false |
 | prefectures       | string  | null: false |
 | municipalities    | string  | null: false |
 | address           | string  | null: false |
-| visit_name        | string  | null: false |
+| visit_name        | string  |             |
 | phone_number      | string  | null: false |
 
 ### Association
-- has_one :item
-- belongs_to :user
+- has_one :purchase
