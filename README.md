@@ -42,10 +42,13 @@ Things you may want to cover:
 # itemsテーブル
 | Column       | Type    | Options     |
 | ------------ | ------- | ----------- |
-| product_name | text    | null: false |
+| product_name | string  | null: false |
 | description  | text    | null: false |
 | category     | integer | null: false |
-| condition    | string  | null: false |
+| condition    | integer | null: false |
+| burden       | integer | null: false |
+| area         | integer | null: false |
+| days         | integer | null: false |
 | price        | integer | null: false |
 
 ### Association
@@ -54,10 +57,11 @@ Things you may want to cover:
 
 
 # purchase
-| Column  | Type    | Options     |
-| ------- | ------- | ----------- |
-| user_id | string  | null: false |
-| item_id | string  | null: false |
+| Column      | Type      | Options           |
+| ----------- | --------- | ----------------- |
+| user_id     | reference | null: false       |
+| item_id     | reference | null: false       |
+| foreign_key | string    | foreign_key: true |
 
 ### Association
 - belongs__to :item
@@ -69,7 +73,7 @@ Things you may want to cover:
 | Column            | Type    | Options     |
 | ----------------- | ------- | ----------- |
 | postal_number     | string  | null: false |
-| prefectures       | string  | null: false |
+| prefectures       | integer | null: false |
 | municipalities    | string  | null: false |
 | address           | string  | null: false |
 | visit_name        | string  |             |
