@@ -23,38 +23,44 @@ Things you may want to cover:
 
 * ...
 # usersテーブル
+| Column   | Type               | Options                   |
+| -------- | ------------------ | ------------------------- |
+| nickname | string             | null: false,              |
+| email    | string             | null: false, unique: true |
+| password | string             | encrypted_password        |
+| name1    | string             | null: false               |
+| name2    | string             | null: false               |
+| birthday | date               | null: false               |
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| nickname | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
-| name1    | string | null: false |
-| name2    | string | null: false |
-| birthday | date   | null: false |
+### Association
+- has_many :items
+- has_many :purchase
+
 
 # itemsテーブル
-
 | Column       | Type    | Options     |
 | ------------ | ------- | ----------- |
-| image        | string  | null: false |
-| product name | string  | null: false |
+| product_name | string  | null: false |
 | description  | string  | null: false |
 | category     | integer | null: false |
 | condition    | string  | null: false |
 | price        | integer | null: false |
 
-# purchase テーブル
+### Association
+- belongs_to :user
+- has_one :purchase
 
+
+# purchases テーブル
 | Column            | Type    | Options     |
 | ----------------- | ------- | ----------- |
-| card number       | integer | null: false |
-| deadline          | integer | null: false |
-| code              | integer | null: false |
-| postal number     | integer | null: false |
+| postal_number     | string  | null: false |
 | prefectures       | string  | null: false |
 | municipalities    | string  | null: false |
 | address           | string  | null: false |
-| visit name        | string  | null: false |
-| phone number      | integer | null: false |
+| visit_name        | string  | null: false |
+| phone_number      | string  | null: false |
 
+### Association
+- has_one :item
+- belongs_to :user
