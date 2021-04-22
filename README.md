@@ -42,8 +42,8 @@ Things you may want to cover:
 # itemsテーブル
 | Column       | Type    | Options     |
 | ------------ | ------- | ----------- |
-| product_name | string  | null: false |
-| description  | string  | null: false |
+| product_name | text    | null: false |
+| description  | text    | null: false |
 | category     | integer | null: false |
 | condition    | string  | null: false |
 | price        | integer | null: false |
@@ -56,13 +56,13 @@ Things you may want to cover:
 # purchase
 | Column  | Type    | Options     |
 | ------- | ------- | ----------- |
-| who     | string  | null: false |
-| what    | string  | null: false |
+| user_id | string  | null: false |
+| item_id | string  | null: false |
 
 ### Association
-- has_one :item
+- belongs__to :item
 - belongs_to :user
-
+- has_one :address
 
 
 # address テーブル
@@ -76,4 +76,4 @@ Things you may want to cover:
 | phone_number      | string  | null: false |
 
 ### Association
-- has_one :purchase
+- belongs_to :purchase
