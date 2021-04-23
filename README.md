@@ -48,7 +48,7 @@ Things you may want to cover:
 | condition_id  | integer | null: false |
 | burden_id     | integer | null: false |
 | prefecture_id | integer | null: false |
-| days_id       | integer | null: false |
+| delivery_id   | integer | null: false |
 | price         | integer | null: false |
 
 ### Association
@@ -69,14 +69,14 @@ Things you may want to cover:
 
 
 # addresses テーブル
-| Column            | Type    | Options     |
-| ----------------- | ------- | ----------- |
-| postal_number     | string  | null: false |
-| prefectures_id    | integer | null: false |
-| municipalities    | string  | null: false |
-| address           | string  | null: false |
-| visit_name        | string  |             |
-| phone_number      | string  | null: false |
+| Column            | Type    | Options                         |
+| ----------------- | ------- | ------------------------------- |
+| postal_number     | string  | null: false                     |
+| prefecture_id     | integer | null: false, false ,foreign_key |
+| municipalities    | string  | null: false                     |
+| address           | string  | null: false                     |
+| visit_name        | string  |                                 |
+| phone_number      | string  | null: false                     |
 
 ### Association
 - belongs_to :purchase
