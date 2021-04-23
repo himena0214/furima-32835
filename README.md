@@ -22,3 +22,63 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+# usersテーブル
+| Column             | Type               | Options                   |
+| ------------------ | ------------------ | ------------------------- |
+| nickname           | string             | null: false,              |
+| email              | string             | null: false, unique: true |
+| encrypted_password | string             | null: false               |
+| last_name          | string             | null: false               |
+| first_name         | string             | null: false               |
+| last_name_kana     | string             | null: false               |
+| first_name_kana    | string             | null: false               |
+| birthday           | date               | null: false               |
+
+### Association
+- has_many :items
+- has_many :purchases
+
+
+# itemsテーブル
+| Column        | Type    | Options                        |
+| ------------- | ------- | ------------------------------ |
+| product_name  | string  | null: false                    |
+| description   | text    | null: false                    |
+| category_id   | integer | null: false                    |
+| condition_id  | integer | null: false                    |
+| burden_id     | integer | null: false                    |
+| prefecture_id | integer | null: false                    |
+| delivery_id   | integer | null: false                    |
+| price         | integer | null: false                    |
+| user          | integer | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- has_one :purchase
+
+
+# purchases テーブル
+| Column      | Type      | Options                          |
+| ----------- | --------- | -------------------------------- |
+| user        | reference | null: false , foreign_key: :true |
+| item        | reference | null: false , foreign_key: :true |
+
+### Association
+- belongs__to :item
+- belongs_to :user
+- has_one :address
+
+
+# addresses テーブル
+| Column            | Type    | Options                         |
+| ----------------- | ------- | ------------------------------- |
+| postal_number     | string  | null: false                     |
+| prefecture_id     | integer | null: false                     |
+| municipalities    | string  | null: false                     |
+| address           | string  | null: false                     |
+| visit_name        | string  |                                 |
+| phone_number      | string  | null: false                     |
+| purchase          | string  | null: false, false ,foreign_key |
+
+### Association
+- belongs_to :purchase
