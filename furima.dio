@@ -11,15 +11,15 @@
                     <mxGeometry y="30" width="200" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="items" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;sketch=0;" vertex="1" parent="1">
-                    <mxGeometry x="560" y="100" width="170" height="160" as="geometry"/>
+                    <mxGeometry x="560" y="100" width="170" height="170" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" value="product_name&#10;description&#10;category_id&#10;condition_id&#10;price&#10;burden_id&#10;prefecture_id&#10;delivery_id&#10;&#10;&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="4">
-                    <mxGeometry y="30" width="170" height="130" as="geometry"/>
+                <mxCell id="19" value="product_name&#10;description&#10;category_id&#10;condition_id&#10;price&#10;burden_id&#10;prefecture_id&#10;delivery_id&#10;user&#10;&#10;&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="4">
+                    <mxGeometry y="30" width="170" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" value="address" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;sketch=0;" vertex="1" parent="1">
                     <mxGeometry x="620" y="290" width="180" height="150" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="pastal number&#10;prefectures_id&#10;municipalities&#10;address&#10;visit_name&#10;phone_number" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="12">
+                <mxCell id="13" value="pastal number&#10;prefecture_id&#10;municipalities&#10;address&#10;visit_name&#10;phone_number&#10;purchase" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="12">
                     <mxGeometry y="30" width="180" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="15" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="3">

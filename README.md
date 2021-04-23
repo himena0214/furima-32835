@@ -40,16 +40,17 @@ Things you may want to cover:
 
 
 # itemsテーブル
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| product_name  | string  | null: false |
-| description   | text    | null: false |
-| category_id   | integer | null: false |
-| condition_id  | integer | null: false |
-| burden_id     | integer | null: false |
-| prefecture_id | integer | null: false |
-| delivery_id   | integer | null: false |
-| price         | integer | null: false |
+| Column        | Type    | Options                        |
+| ------------- | ------- | ------------------------------ |
+| product_name  | string  | null: false                    |
+| description   | text    | null: false                    |
+| category_id   | integer | null: false                    |
+| condition_id  | integer | null: false                    |
+| burden_id     | integer | null: false                    |
+| prefecture_id | integer | null: false                    |
+| delivery_id   | integer | null: false                    |
+| price         | integer | null: false                    |
+| user          | integer | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -77,6 +78,7 @@ Things you may want to cover:
 | address           | string  | null: false                     |
 | visit_name        | string  |                                 |
 | phone_number      | string  | null: false                     |
+| purchase          | string  | null: false, false ,foreign_key |
 
 ### Association
 - belongs_to :purchase
